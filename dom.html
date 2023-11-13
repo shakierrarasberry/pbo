@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Template for DOM Exercise</title>
+</head>
+<body>
+
+    <header>
+        <h1 id="judul">Judul Halaman</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="content">
+        <article>
+            <h2>Artikel Pertama</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+        </article>
+        <article>
+            <h2>Artikel Kedua</h2>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Hak Cipta. Dibuat dengan <span class="heart">&hearts;</span> di Dunia Web.</p>
+    </footer>
+
+    <script>
+
+        // dapatkan ELEMEN HTML
+        // ID = judul
+        // tag = h1
+
+        //A.pakai getElementById/
+        //cara merubah isi html di js menggunakan innerText dan innerHTML
+        //contoh
+    document.getElementById("judul").innerText = "<u>Halaman Beranda</u>";
+	document.getElementById("judul").innerHTML = "<u>Halaman Beranda</u>";
+            /note : jadi si text judul berubah menjadi hala,am beranda karena pakai innerHTML dan innerText/
+    
+        //B. pakai getElementsByTagName/
+        //cara menggunakan style di js/
+    document.getElementsByTagName("li")[0].innerText = "ubah"
+    document.getElementsByTagName("li")[0].style.backgroundColor = "purple"
+    //untuk pemisan kata di js itu di awali dengan huruf besar..contohnya BgackgroundColor,nah si C nya itu besar,tidak seperti yang html klo pemisah kata pakai -
+
+    //jika ingin di ubah smuanya pakai perulangan
+    var jumlahElement = document.getElementsByTagName('li').length; //gunanya length buat mencari tahu ada berapa data yang ada di codingan,cara liatnya di console
+    for(i =0; i < jumlahElement; i++){
+        document.getElementsByTagName("li")[i].style.color = "white"
+        document.getElementsByTagName("li")[i].style.backgroundColor = "purple"
+    }
+
+    //selain pakai documet.getelement cara memanipilasi di js ada cara lain yaitu dengan menggunakan queryslector,queryselector ini terbagi menjadi 2,queryslector dan queryslectorAll
+
+    //contoh
+    //document.querySelector("#content").innerText = "update"
+    //(ini di komentarkan karena menanggu codingan)
+    // di pakai untuk mengambil element satu saja dan klo pake queryselector harus pakai pagar di dalam tanda kurungnya sama seperti di css.
+    document.querySelectorAll("h2")[1].innerText ="update";
+    //di pakai untuk mengmbil element lebih dari 1,dan untuk yang All ini tidak perlu pakai pagar,kenapa? saya pun gatau uda dari sananya cenah.
+    
+    //latihan/
+    document.getElementsByTagName("li")[1].innerText = "tentang kitaaaaa"
+    document.getElementsByTagName("li")[2].innerText = "kontak gwehhhh"
+    document.getElementsByTagName("h2")[0].innerText = "tentang kitaaaaa"
+    </script>
+
+   
+    
+    
+</body>
+</html>
