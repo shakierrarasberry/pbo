@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+.biru{
+background:"red";
+color:"white";
+}
+.abu{
+background:"grey";
+}
+</style>
+<body>
+  <button id="btn" onclick="subrek()">subrek</button>
+  <script>
+    var button = document.getElementById("btn")
+    button.classList.add("biru");
+    
+    function subrek(){
+      button.ClassList.remove("biru");
+      button.ClassList.add("abu");
+    }
+  </script>
+</body>
+</html>
